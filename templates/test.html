@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css" />
+  </head>
+  <body>
+    <section class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h2 class="text-center text-success">TEST ONE</h2>
+        <form action="/test" method="post">
+          <label> Value a</label>
+          <input
+            type="text"
+            name="a"
+            class="form-control"
+            placeholder="Enter value for a"
+          />
+          <label> Value b</label>
+          <input
+            type="text"
+            name="b"
+            class="form-control"
+            placeholder="Enter value for b"
+            required
+          />
+          <label>Value c</label>
+          <input
+            type="text"
+            name="c"
+            class="form-control"
+            placeholder="Enter value for c"
+            required
+          />
+          <label> Value d</label>
+          <input
+            type="text"
+            name="d"
+            class="form-control"
+            placeholder="Enter value for d"
+            required
+          />
+          <br /><br />
+
+          <input type="submit" value="Solution" class="btn btn-success" />
+          <br />
+
+          <b class="text-success">
+            Your Answer is: <span class="text-danger">{{answer}}</span></b
+          >
+        </form>
+      </div>
+      <div class="col-md-2"></div>
+    </section>
+
+    <br /><br />
+
+    <a href="/result" class="btn btn-danger">See results</a>
+  </body>
+</html>

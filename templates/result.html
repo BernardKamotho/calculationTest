@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display</title>
+    <style>
+      /* Styling the button */
+      button {
+        background-color: rgb(241, 241, 241);
+        color: white;
+        border-radius: 10px;
+        padding: 5px;
+      }
+
+      /* Styling the table and rows */
+      table {
+        width: 70%;
+        border-collapse: collapse;
+        margin: 20px auto; /* Center the table */
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+        border: 2px solid #000;
+      }
+
+      th {
+        background-color: #4caf50; /* Header background */
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9; /* Default even row background */
+      }
+
+      tr:nth-child(odd) {
+        background-color: #fff; /* Default odd row background */
+      }
+
+      /* Hover effect for table rows */
+      tr:hover {
+        background-color: #e0f7fa; /* Light blue background on hover */
+        transition: background-color 0.3s ease; /* Smooth transition */
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center; color: green">Results From Calculations</h2>
+
+    <table border="2px">
+      <tr>
+        <th>Problem ID</th>
+        <th>Value A</th>
+        <th>Value B</th>
+        <th>Value C</th>
+        <th>Value D</th>
+        <th>Answer</th>
+        <th>Delete</th>
+      </tr>
+      {% for x in calculations %}
+      <tr>
+        <td>{{x[0]}}</td>
+        <td>{{x[1]}}</td>
+        <td>{{x[2]}}</td>
+        <td>{{x[3]}}</td>
+        <td>{{x[4]}}</td>
+        <td>{{x[5]}}</td>
+        <td>
+          <form action="/delete/{{x[0]}}" method="post">
+            <button type="submit" class="btn btn-danger">
+              <img
+                src="../static/images/delete.png"
+                alt=""
+                width="20px"
+                height="20px"
+              />
+            </button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
